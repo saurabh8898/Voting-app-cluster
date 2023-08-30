@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web01
+  template:
+    metadata:
+      labels:
+        app: web01
+    spec:
+      containers:
+        - name: web01
+          image: saurabhshinder43/web01:v1
+          ports:
+            - containerPort: 80
